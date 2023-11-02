@@ -2,7 +2,7 @@ name: Events Demo 1
 on: 
   push:
     branches:
-    - main
+    - master
   workflow_dispatch:
   issues:
     types: [opened, edited, closed]
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
-        run: echo "${{ toJSON(github.event) }}"
+        run: echo "${{ toJSON(github.actor) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
