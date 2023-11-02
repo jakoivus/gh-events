@@ -1,7 +1,14 @@
 name: Events Demo 1
-on: ...
+on: 
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+  issues:
+    types: [opened, edited]
+
 jobs:
-  deploy:
+  deploy:  
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
